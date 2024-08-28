@@ -42,6 +42,8 @@ export default [
       'prefer-const': 'error',
       'arrow-parens': ['error', 'always'],
       'semi': ['error', 'always'],
+      "comma-dangle": ["error", "always-multiline"],
+      "eol-last": ["error", "always"],
     },
   },
 ];
