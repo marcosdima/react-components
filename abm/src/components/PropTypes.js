@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { fieldType } from '../enums';
+import fieldType from '../enums/fieldType';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,

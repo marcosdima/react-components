@@ -1,5 +1,5 @@
 import CharField from "./CharField";
-import { fieldType } from "../../enums";
+import fieldType from "../../enums/fieldType";
 
 const fields = {
     [fieldType.CHAR]: CharField,
