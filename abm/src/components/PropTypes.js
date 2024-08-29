@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import fieldType from '../enums/fieldType';
+import emailDomain from '../enums/emailDomain';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
@@ -10,6 +11,7 @@ export const FieldProps =  {
 
 export const BaseFormProps = {
     fields: PropTypes.arrayOf((PropTypes.shape(FieldProps)).isRequired),
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export const HookShape = PropTypes.shape({
@@ -20,4 +22,17 @@ export const HookShape = PropTypes.shape({
 
 export const CharFieldProps = {
     hook: HookShape,
+    status: PropTypes.func.isRequired,
+    settings: PropTypes.shape({
+        maxLength: PropTypes.number,
+        minLength: PropTypes.number,
+    }),
+};
+
+export const EmailFieldProps = {
+    hook: HookShape,
+    status: PropTypes.func.isRequired,
+    settings: PropTypes.shape({
+        validDomains: PropTypes.oneOf(Object.values(emailDomain)),
+    }),
 };
