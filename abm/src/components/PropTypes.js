@@ -31,7 +31,7 @@ const HookShape = PropTypes.shape({
     value: PropTypes.string.isRequired,
 }).isRequired;
 
-const BasicShape = {
+export const BasicShape = {
     hook: HookShape,
     status: PropTypes.func.isRequired,
 };
@@ -56,5 +56,14 @@ export const NumberFieldProps = {
     settings: PropTypes.shape({
         min: PropTypes.number,
         max: PropTypes.number,
+    }),
+};
+
+export const PasswordFieldProps = {
+    ...BasicShape,
+    settings: PropTypes.shape({
+        minLength: PropTypes.number,
+        alphaNumeric: PropTypes.bool,
+        signs: PropTypes.bool,
     }),
 };
