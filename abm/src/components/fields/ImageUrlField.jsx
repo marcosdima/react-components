@@ -9,10 +9,8 @@ const ImageUrlField = ({ hook, status }) => {
 
     return (
         <>
-            <div>
-                <label>{hook.name}</label>
-                <input {...hook} />
-            </div>
+            <label>{hook.name}</label>
+            <input {...hook} />
             <img src={hook.value} alt="Not Found" />
         </>
     );
