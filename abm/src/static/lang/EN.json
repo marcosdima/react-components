@@ -1,0 +1,14 @@
+{
+    "status": {
+        "fields": {
+            "CharField": {
+                "maxLength": "'%name%' has a limit of %maxLength% characters.",
+                "minLength": "'%name%' has a minimum of %minLength% characters."
+            }
+        },
+        "generic": {
+            "OK": "'%name%' is OK!",
+            "required": "'%name%' is required!"
+        }
+    }
+}
