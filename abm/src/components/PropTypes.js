@@ -15,6 +15,7 @@ export const FieldProps =  {
 export const BaseFormProps = {
     fields: PropTypes.arrayOf((PropTypes.shape(FieldProps)).isRequired),
     onSubmit: PropTypes.func.isRequired,
+    language: PropTypes.oneOf(Object.values(lang)),
 };
 
 export const StatusProps = {

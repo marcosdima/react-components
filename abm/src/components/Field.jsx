@@ -20,7 +20,7 @@ const Field = ({ type, name, onChange, required = false, settings={}, language=l
 
     const FieldComponent = fields[type];
 
-    const updateStatus = useCallback((status, fieldStatusMessage='generic', variables={name: input.name}) => {
+    const updateStatus = useCallback((status, fieldStatusMessage='generic', variables={}) => {
         // Validates that FieldComponent exists.
         if (!FieldComponent) {
             return;
@@ -31,7 +31,7 @@ const Field = ({ type, name, onChange, required = false, settings={}, language=l
             // If required was settes as true and the user does not send an input.
             setStatus({
                 status, 
-                statusMessage: translateGenericStatus('required', variables, language),
+                statusMessage: translateGenericStatus('required', {name: input.name}, language),
             });
         } else if (status === statusType.OK) {
             // If the status is OK, then sends a generic message. (This may change in the future).
