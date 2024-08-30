@@ -7,13 +7,13 @@ const EmailField = ({ hook, status, settings: { validDomains } }) => {
         const email = hook.value;
         const [, emailDomain] = email.split('@');
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
+
         if (!regex.test(email)) {
-            status(statusType.ERROR, `'${hook.name}' does not have a valid format.`);
+            status(statusType.ERROR, 'wrongFormat', { name: hook.name });
         } else if (validDomains && !validDomains.find((domain) => emailDomain.startsWith(domain))) {
-            status(statusType.ERROR, `'${hook.name}' does not have a valid domain.`);
+            status(statusType.ERROR, 'invalidDomain', { name: hook.name });
         } else {
-            status(statusType.OK, `'${hook.name}' it's OK!`);
+            status(statusType.OK);
         }
     }, [hook.name, hook.value, hook.value.length, status, validDomains]);
 

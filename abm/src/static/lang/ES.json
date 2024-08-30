@@ -4,6 +4,19 @@
             "CharField": {
                 "maxLength": "'%name%' tiene un límite de %maxLength% caracteres.",
                 "minLength": "'%name%' tiene un mínimo de %minLength% caracteres."
+            },
+            "EmailField": {
+                "wrongFormat": "'%name%' no tiene un formato válido.",
+                "invalidDomain": "'%name%' no tiene un dominio válido."
+            },
+            "NumberField": {
+                "max": "'%name%' tiene un máximo establecido en %max%",
+                "min": "'%name%' tiene un mínimo establecido en %min%"
+            },
+            "PasswordField": {
+                "minLength": "La contraseña debe tener al menos %minLength% caracteres",
+                "alphaNumeric": "La contraseña debe contener letras y números",
+                "signs": "La contraseña debe contener signos"
             }
         },
         "generic": {

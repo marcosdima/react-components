@@ -4,7 +4,7 @@ import statusType from "../../enums/statusType";
 
 const ImageUrlField = ({ hook, status }) => {
     useEffect(() => {
-        status(statusType.OK, `'${hook.name}' it's OK!`);
+        status(statusType.OK);
     }, [hook.name, status]);
 
     return (

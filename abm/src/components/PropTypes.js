@@ -2,12 +2,14 @@ import PropTypes from 'prop-types';
 import fieldType from '../enums/fieldType';
 import emailDomain from '../enums/emailDomain';
 import statusType from '../enums/statusType';
+import lang from '../enums/lang';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     required: PropTypes.bool,
+    language: PropTypes.oneOf(Object.values(lang)),
 };
 
 export const BaseFormProps = {

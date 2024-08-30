@@ -7,15 +7,15 @@ const checkPassword = (pass, constraints) => {
     const { minLength, alphaNumeric, signs } = constraints;
 
     if (minLength && pass.length < minLength) {
-        return [statusType.ERROR, `password must be at least ${minLength} characters long`];
+        return [statusType.ERROR, 'minLength', { minLength }];
     }
     
     if (alphaNumeric && (strings.isAlpha(pass) || strings.isNumeric(pass))) {
-        return [statusType.ERROR, `password must has letters and numbers`];    
+        return [statusType.ERROR, 'alphaNumeric'];    
     }
 
     if (signs && strings.isAlphaNumeric(pass)) {
-        return [statusType.ERROR, `password must has sings`];
+        return [statusType.ERROR, 'signs'];
     }
 
     return [statusType.OK, `Password is OK!`];    

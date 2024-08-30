@@ -4,6 +4,19 @@
             "CharField": {
                 "maxLength": "'%name%' has a limit of %maxLength% characters.",
                 "minLength": "'%name%' has a minimum of %minLength% characters."
+            },
+            "EmailField": {
+                "wrongFormat": "'%name%' does not have a valid format.",
+                "invalidDomain": "'%name%' does not have a valid domain."
+            },
+            "NumberField": {
+                "max": "'%name%' has a maximun setted at %max%",
+                "min": "'%name%' has a minimun setted at %min%"
+            },
+            "PasswordField": {
+                "minLength": "Password must be at least %minLength% characters long",
+                "alphaNumeric": "Password must has letters and numbers",
+                "signs": "Password must has sings"
             }
         },
         "generic": {
