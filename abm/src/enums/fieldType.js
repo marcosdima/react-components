@@ -4,6 +4,7 @@ const fieldType = Object.freeze({
     NUMBER: 'number',
     IMAGE: 'image',
     PASSWORD: 'password',
+    SELECTOR: 'selector'
 });
 
 export default fieldType;

@@ -34,12 +34,12 @@ const HookShape = PropTypes.shape({
     value: PropTypes.string.isRequired,
 }).isRequired;
 
-export const BasicShape = {
+const BasicShape = {
     hook: HookShape,
     status: PropTypes.func.isRequired,
 };
 
-export const CharFieldProps = {
+const CharFieldProps = {
     ...BasicShape,
     settings: PropTypes.shape({
         maxLength: PropTypes.number,
@@ -47,14 +47,14 @@ export const CharFieldProps = {
     }),
 };
 
-export const EmailFieldProps = {
+const EmailFieldProps = {
     ...BasicShape,
     settings: PropTypes.shape({
         validDomains: PropTypes.oneOf(Object.values(emailDomain)),
     }),
 };
 
-export const NumberFieldProps = {
+const NumberFieldProps = {
     ...BasicShape,
     settings: PropTypes.shape({
         min: PropTypes.number,
@@ -62,7 +62,7 @@ export const NumberFieldProps = {
     }),
 };
 
-export const PasswordFieldProps = {
+const PasswordFieldProps = {
     ...BasicShape,
     settings: PropTypes.shape({
         minLength: PropTypes.number,
@@ -70,3 +70,24 @@ export const PasswordFieldProps = {
         signs: PropTypes.bool,
     }),
 };
+
+const SelectorFieldProps = {
+    ...BasicShape,
+    settings: PropTypes.shape({
+        values: PropTypes.arrayOf(
+            PropTypes.shape({
+                label: PropTypes.string.isRequired,
+                value: PropTypes.any
+            })
+        )
+    }),
+};
+
+export {
+    BasicShape,
+    CharFieldProps,
+    EmailFieldProps,
+    NumberFieldProps,
+    PasswordFieldProps,
+    SelectorFieldProps
+}
