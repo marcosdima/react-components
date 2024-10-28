@@ -1,6 +1,5 @@
 import lang from "../enums/lang";
-import EN from '../static/lang/EN.json';
-import ES from '../static/lang/ES.json';
+import { json } from "../static/lang";
 
 /*
     ATTENTION!!!
@@ -21,16 +20,9 @@ import ES from '../static/lang/ES.json';
             - 'firstname' has a limit of 3 characters.
 */
 
-const json = {
-    [lang.EN]: EN,
-    [lang.ES]: ES,
-};
-
 const translate = (language, routes, variables) => { 
     // Set the keys with the format expected for the JSON message.
-    const values = Object.keys(variables).map((key) => { 
-        return { key, keyFormatted: `%${key}%`};
-    });
+    const values = Object.keys(variables).map((key) => ({ key, keyFormatted: `%${key}%`}))
 
     // Set the JSON path.
     const path = routes.reduce(
