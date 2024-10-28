@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { PasswordFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import strings from "../../functions/strings";
+import InputCustom from "../elements/InputCustom";
 
 const checkPassword = (pass, constraints) => {
     const { minLength, alphaNumeric, signs } = constraints;
@@ -29,7 +30,7 @@ const PasswordField = ({ hook, status, settings }) => {
     return (
         <>
             <label>{hook.name}</label>
-            <input type="password" {...hook} />
+            <InputCustom type="password" {...hook} />
         </>
     );
 };

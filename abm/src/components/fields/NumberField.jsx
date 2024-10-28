@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { NumberFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
+import InputCustom from "../elements/InputCustom";
 
 const NumberField = ({ hook, status, settings: { max, min } }) => {
     useEffect(() => {
@@ -28,7 +29,7 @@ const NumberField = ({ hook, status, settings: { max, min } }) => {
     return (
         <>
             <label>{hook.name}</label>
-            <input onKeyDown={handleKeyDown} {...hook} />
+            <InputCustom onKeyDown={handleKeyDown} {...hook} />
         </>
     );
 };

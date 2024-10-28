@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BasicShape } from "../PropTypes";
 import statusType from "../../enums/statusType";
+import InputCustom from "../elements/InputCustom";
 
 const ImageUrlField = ({ hook, status }) => {
     useEffect(() => {
@@ -10,7 +11,7 @@ const ImageUrlField = ({ hook, status }) => {
     return (
         <>
             <label>{hook.name}</label>
-            <input {...hook} />
+            <InputCustom {...hook} />
             <img src={hook.value} alt="Not Found" />
         </>
     );
