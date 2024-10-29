@@ -3,6 +3,7 @@ import { PasswordFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import strings from "../../functions/strings";
 import InputCustom from "../elements/InputCustom";
+import LabelCustom from "../elements/LabelCustom";
 
 const checkPassword = (pass, constraints) => {
     const { minLength, alphaNumeric, signs } = constraints;
@@ -29,7 +30,7 @@ const PasswordField = ({ hook, status, settings }) => {
 
     return (
         <>
-            <label>{hook.name}</label>
+            <LabelCustom text={hook.name} capitalFirst={true}/>
             <InputCustom type="password" {...hook} />
         </>
     );

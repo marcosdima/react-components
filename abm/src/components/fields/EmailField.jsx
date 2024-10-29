@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { CharFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import InputCustom from "../elements/InputCustom";
+import LabelCustom from "../elements/LabelCustom";
 
 const EmailField = ({ hook, status, settings: { validDomains } }) => {
     useEffect(() => {
@@ -20,7 +21,7 @@ const EmailField = ({ hook, status, settings: { validDomains } }) => {
 
     return (
         <>
-            <label>{hook.name}</label>
+            <LabelCustom text={hook.name} capitalFirst={true}/>
             <InputCustom {...hook} />
         </>
     );

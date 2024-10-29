@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { CharFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import InputCustom from "../elements/InputCustom";
+import LabelCustom from "../elements/LabelCustom";
 
 const CharField = ({ hook, status, settings: { maxLength, minLength } }) => {
     useEffect(() => {
@@ -16,7 +17,7 @@ const CharField = ({ hook, status, settings: { maxLength, minLength } }) => {
 
     return (
         <>
-            <label>{hook.name}</label>
+            <LabelCustom text={hook.name} capitalFirst={true}/>
             <InputCustom {...hook} />
         </>
     );

@@ -1,18 +1,19 @@
 import { useEffect } from "react";
 import { SelectorFieldProps } from "../PropTypes"; 
-import Select from 'react-select';
+import SelectCustom from "../elements/SelectCustom";
+
 
 const SelectorField = ({ hook, status, settings: { values } }) => {
     useEffect(() => {
         status();
-    }, []);
+    }, [status]);
 
     const onChangeValue = ({ value }) => {
         hook.onChange(value);
-    }
+    };
 
     return (
-        <Select
+        <SelectCustom
             options={values}
             onChange={onChangeValue}
             placeholder="Selecciona una opción"
