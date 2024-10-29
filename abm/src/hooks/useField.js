@@ -5,7 +5,7 @@ const useField = (name) => {
 
   const onChange = (event) => {
     const value = event?.target?.value ?? event; // If event has no 'target' attribute, then means that the value was provided directly.
-    return setValue(`${value}`)
+    return setValue(`${value}`);
   };
 
   return {
