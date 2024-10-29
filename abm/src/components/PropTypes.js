@@ -77,9 +77,9 @@ export const SelectorFieldProps = {
         values: PropTypes.arrayOf(
             PropTypes.shape({
                 label: PropTypes.string.isRequired,
-                value: PropTypes.any
-            })
-        )
+                value: PropTypes.any,
+            }),
+        ),
     }),
 };
 
@@ -89,4 +89,27 @@ export const InputCustomProps = {
     value: PropTypes.any,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
+};
+
+export const LabelCustomProps = {
+    capitalFirst: PropTypes.bool,
+    text: PropTypes.string.isRequired,
+};
+
+export const ButtonCustomProps = {
+    text: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    disabled: PropTypes.bool,
+};
+
+export const SelectCustomProps = {
+    placeholder: PropTypes.string,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            value: PropTypes.any,
+        }),
+    ),
+    onChange: PropTypes.func,
 };

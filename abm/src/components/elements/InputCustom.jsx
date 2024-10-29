@@ -1,8 +1,8 @@
-import { StyledInput } from "../../styles/StyledInput.styles";
+import StyledInput from "../../styles/StyledInput.styles";
 import { InputCustomProps } from "../PropTypes";
 
 const InputCustom = ({ ...props }) => {
-    return (<StyledInput {...props}/>)
+    return (<StyledInput {...props}/>);
 };
 
 InputCustom.propTypes = InputCustomProps;
