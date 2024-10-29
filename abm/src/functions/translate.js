@@ -22,14 +22,26 @@ import { json } from "../static/lang";
 
 const translate = (language, routes, variables) => { 
     // Set the keys with the format expected for the JSON message.
-    const values = Object.keys(variables).map((key) => ({ key, keyFormatted: `%${key}%`}))
-
+    const values = Object.keys(variables).map((key) => ({ key, keyFormatted: `%${key}%`}));
+    
     // Set the JSON path.
+    const languageJson = json[language];
     const path = routes.reduce(
-        (acc, curr) => acc[curr],
-        json[language],
+        (acc, curr) => {
+            if (!acc) {
+                return acc;
+            }
+            return acc[curr];
+        },
+        languageJson,
     );
 
+    // Validates that the path was founded.
+    if (!path) {
+        // eslint-disable-next-line no-console
+        console.error(`Missing route in: ${routes.join(', ')}.`);
+    }
+    
     // Replace the message parameters.
     const result = values.reduce(
         (acc, { key, keyFormatted }) => acc.replace(keyFormatted, variables[key]),
