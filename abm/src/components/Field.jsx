@@ -27,10 +27,10 @@ const Field = ({ type, name, onChange, required = false, settings={}, language=l
         }
 
         // Updates 'status'.
-        if (required && !input.value) {
+        if (required && (!input.value || input.value === '')) {
             // If required was settes as true and the user does not send an input.
             setStatus({
-                status, 
+                status: statusType.ERROR, 
                 statusMessage: translateGenericStatus('required', {name: input.name}, language),
             });
         } else if (status === statusType.OK) {
