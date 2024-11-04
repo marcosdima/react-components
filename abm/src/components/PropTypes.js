@@ -123,3 +123,9 @@ export const TextAreaCustomProps = {
     cols: PropTypes.number,
     disabled: PropTypes.bool,
 };
+
+export const ToggleCustomProps = {
+    showMessage: PropTypes.string.isRequired,
+    closeMessage: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
