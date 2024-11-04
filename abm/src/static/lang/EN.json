@@ -17,6 +17,12 @@
                 "minLength": "Password must be at least %minLength% characters long",
                 "alphaNumeric": "Password must has letters and numbers",
                 "signs": "Password must has sings"
+            },
+            "SelectorField": {
+            },
+            "TextField": {
+                "maxLength": "'%name%' has a limit of %maxLength% characters.",
+                "minLength": "'%name%' has a minimum of %minLength% characters."
             }
         },
         "generic": {

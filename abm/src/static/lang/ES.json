@@ -17,6 +17,12 @@
                 "minLength": "La contraseña debe tener al menos %minLength% caracteres",
                 "alphaNumeric": "La contraseña debe contener letras y números",
                 "signs": "La contraseña debe contener signos"
+            },
+            "SelectorField": {
+            },
+            "TextField": {
+                "maxLength": "'%name%' tiene un límite de %maxLength% caracteres.",
+                "minLength": "'%name%' tiene un mínimo de %minLength% caracteres."
             }
         },
         "generic": {
