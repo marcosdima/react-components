@@ -32,6 +32,7 @@ const HookShape = PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
 }).isRequired;
 
 export const BasicShape = {

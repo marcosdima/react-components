@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useField = (name) => {
+const useField = (name, placeholder) => {
   const [value, setValue] = useState('');
 
   const onChange = (event) => {
@@ -12,6 +12,7 @@ const useField = (name) => {
     name,
     value,
     onChange,
+    placeholder,
   };
 };
 
