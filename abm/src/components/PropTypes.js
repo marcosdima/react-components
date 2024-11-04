@@ -113,3 +113,12 @@ export const SelectCustomProps = {
     ),
     onChange: PropTypes.func,
 };
+
+export const TextAreaCustomProps = {
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    rows: PropTypes.number,
+    cols: PropTypes.number,
+    disabled: PropTypes.bool,
+};

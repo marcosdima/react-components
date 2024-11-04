@@ -5,6 +5,7 @@ import fieldType from "../../enums/fieldType";
 import ImageUrlField from "./ImageUrlField";
 import PasswordField from "./PasswordField";
 import SelectorField from "./SelectorField";
+import TextField from "./TextField";
 
 const fields = {
     [fieldType.CHAR]: CharField,
@@ -13,6 +14,7 @@ const fields = {
     [fieldType.IMAGE]: ImageUrlField,
     [fieldType.PASSWORD]: PasswordField,
     [fieldType.SELECTOR]: SelectorField,
+    [fieldType.TEXT_AREA]: TextField,
 };
 
 export default fields;
