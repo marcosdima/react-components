@@ -1,4 +1,4 @@
-import StyledTextArea from "../../styles/StyledTextArea.styles";
+import StyledTextArea from "../../styles/TextArea.styles";
 import { TextAreaCustomProps } from "../PropTypes";
 
 const TextAreaCustom = ({ ...props }) => {

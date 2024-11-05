@@ -1,4 +1,4 @@
-import StyledInput from "../../styles/StyledInput.styles";
+import StyledInput from "../../styles/Input.styles";
 import { InputCustomProps } from "../PropTypes";
 
 const InputCustom = ({ ...props }) => {

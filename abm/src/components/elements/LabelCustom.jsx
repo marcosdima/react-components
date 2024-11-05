@@ -1,4 +1,4 @@
-import StyledLabel from "../../styles/StyledLabel.styles";
+import StyledLabel from "../../styles/Label.styles";
 import { LabelCustomProps } from "../PropTypes";
 
 const capitalizeFirstLetter = (string) => {

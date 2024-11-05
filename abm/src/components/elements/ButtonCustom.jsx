@@ -1,5 +1,5 @@
 
-import StyledButton from '../../styles/StyledButton.styles';
+import StyledButton from '../../styles/Button.styles';
 import { ButtonCustomProps } from '../PropTypes';
 
 const ButtonCustom = ({ text, onClick, type = 'button', disabled = false }) => {

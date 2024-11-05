@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ToggleCustomProps } from '../PropTypes';
-import StyledToggle, { StyledContent } from '../../styles/StyledToggle.styles';
+import StyledToggle, { StyledContent } from '../../styles/Toggle.styles';
 import PropTypes from 'prop-types';
 import LabelCustom from './LabelCustom';
 
