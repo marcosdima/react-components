@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { NumberFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
-import InputCustom from "../elements/InputCustom";
 import LabelCustom from "../elements/LabelCustom";
+import InputNumberCustom from "../elements/InputNumberCustom";
 
 const NumberField = ({ hook, status, settings: { max, min } }) => {
     useEffect(() => {
@@ -17,20 +17,10 @@ const NumberField = ({ hook, status, settings: { max, min } }) => {
         }
     }, [hook.name, hook.value, max, min, status]);
 
-    const handleKeyDown = (event) => {
-        if (
-            event.key !== 'Backspace' &&
-            event.key !== 'Delete' &&
-            (event.key < '0' || event.key > '9')
-        ) {
-            event.preventDefault();
-        }
-    };
-
     return (
         <>
             <LabelCustom text={hook.name} capitalFirst={true}/>
-            <InputCustom onKeyDown={handleKeyDown} {...hook} />
+            <InputNumberCustom {...hook} />
         </>
     );
 };
