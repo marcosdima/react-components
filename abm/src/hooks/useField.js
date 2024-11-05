@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-const useField = (name, placeholder) => {
+const useField = (name, placeholder, label={ capitalFirst: true }) => {
   const [value, setValue] = useState('');
+
+  label.text = name;
 
   const onChange = (event) => {
     const value = event?.target?.value ?? event; // If event has no 'target' attribute, then means that the value was provided directly.
@@ -13,6 +15,7 @@ const useField = (name, placeholder) => {
     value,
     onChange,
     placeholder,
+    label,
   };
 };
 

@@ -85,16 +85,17 @@ export const SelectorFieldProps = {
 };
 
 // ---- // Elements // ---- //
+export const LabelCustomProps = {
+    capitalFirst: PropTypes.bool,
+    text: PropTypes.string.isRequired,
+};
+
 export const InputCustomProps = {
     type: PropTypes.string,
     value: PropTypes.any,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-};
-
-export const LabelCustomProps = {
-    capitalFirst: PropTypes.bool,
-    text: PropTypes.string.isRequired,
+    label: PropTypes.shape(LabelCustomProps),
 };
 
 export const ButtonCustomProps = {

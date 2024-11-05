@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { NumberFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
-import LabelCustom from "../elements/LabelCustom";
 import InputNumberCustom from "../elements/InputNumberCustom";
 
 const NumberField = ({ hook, status, settings: { max, min } }) => {
@@ -17,12 +16,7 @@ const NumberField = ({ hook, status, settings: { max, min } }) => {
         }
     }, [hook.name, hook.value, max, min, status]);
 
-    return (
-        <>
-            <LabelCustom text={hook.name} capitalFirst={true}/>
-            <InputNumberCustom {...hook} />
-        </>
-    );
+    return <InputNumberCustom {...hook} />;
 };
 
 NumberField.propTypes = NumberFieldProps;

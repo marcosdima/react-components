@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { CharFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
-import LabelCustom from "../elements/LabelCustom";
 import TextAreaCustom from "../elements/TextAreaCustom";
 
 const TextField = ({ hook, status, settings: { maxLength, minLength } }) => {
@@ -15,12 +14,7 @@ const TextField = ({ hook, status, settings: { maxLength, minLength } }) => {
         }
     }, [status, hook.value, hook.name, maxLength, minLength]);
 
-    return (
-        <>
-            <LabelCustom text={hook.name} capitalFirst={true}/>
-            <TextAreaCustom {...hook} />
-        </>
-    );
+    return <TextAreaCustom {...hook} />;
 };
 
 TextField.propTypes = CharFieldProps;
