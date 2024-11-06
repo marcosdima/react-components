@@ -130,3 +130,13 @@ export const ToggleCustomProps = {
     closeMessage: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 };
+
+export const MapCustomProps = {
+    coordinates: PropTypes.arrayOf(
+        PropTypes.shape({
+            lat: PropTypes.number.isRequired,
+            lon: PropTypes.number.isRequired,
+        }),
+    ),
+    loading: PropTypes.bool.isRequired,
+};

@@ -9,12 +9,14 @@ import { Container, TopSection } from "../../styles/general/TopSectionDisplay.st
 
 const SearchLocation = ({ hook, status }) => {
     const [places, setPlaces] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         status(statusType.OK);
     }, [status, hook.value, hook.name]);
-    
+
     const search = async () => {
+        setLoading(true);
         try {
             const getPlaces = await getLocation(hook.value);
             const floatCoordinates = getPlaces.map(
@@ -30,6 +32,7 @@ const SearchLocation = ({ hook, status }) => {
             // eslint-disable-next-line no-console
             console.log(err);
         }
+        setLoading(false);
     };
 
     const label = { text: hook.name, capitalFirst: true };
@@ -40,7 +43,7 @@ const SearchLocation = ({ hook, status }) => {
                 <InputCustom label={label} {...hook}/>
                 <ButtonCustom text='Search' onClick={() => search()}/>
             </TopSection>  
-            <MapCustom coordinates={places} />
+            <MapCustom coordinates={places} loading={loading}/>
         </Container>
     );
 };
