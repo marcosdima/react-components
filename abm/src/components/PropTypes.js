@@ -84,6 +84,15 @@ export const SelectorFieldProps = {
     }),
 };
 
+export const SearchLocationFieldProps = {
+    ...BasicShape,
+    settings: PropTypes.shape({
+        appendAtStart: PropTypes.string,
+        appendAtEnd: PropTypes.string,
+        default: PropTypes.string,
+    }),
+};
+
 // ---- // Elements // ---- //
 export const LabelCustomProps = {
     capitalFirst: PropTypes.bool,
@@ -137,6 +146,7 @@ export const MapCustomProps = {
             lat: PropTypes.number.isRequired,
             lon: PropTypes.number.isRequired,
         }),
-    ),
+    ).isRequired,
     loading: PropTypes.bool.isRequired,
+    updateCoordinates: PropTypes.func,
 };

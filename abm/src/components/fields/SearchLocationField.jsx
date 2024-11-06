@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CharFieldProps } from "../PropTypes";
+import { SearchLocationFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import InputCustom from "../elements/InputCustom";
 import ButtonCustom from "../elements/ButtonCustom";
@@ -7,18 +7,24 @@ import { getLocation } from "../../services/location";
 import MapCustom from "../elements/MapCustom";
 import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
 
-const SearchLocation = ({ hook, status }) => {
-    const [places, setPlaces] = useState(null);
+const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, defaultValue='' }}) => {
+    const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [dir, setDir] = useState(defaultValue);
 
     useEffect(() => {
         status(statusType.OK);
-    }, [status, hook.value, hook.name]);
+    }, [places, status]);
 
     const search = async () => {
         setLoading(true);
         try {
-            const getPlaces = await getLocation(hook.value);
+            // Fetch the places which matched dir.
+            const start = appendAtStart ? (appendAtStart + ', ') : '';
+            const end = appendAtEnd ? (', ' + appendAtEnd) : '';
+            const getPlaces = await getLocation(`${start}${dir}${end}`);
+
+            // Cast string coordinates as float.
             const floatCoordinates = getPlaces.map(
                 ({ lon, lat }) => (
                     {
@@ -27,6 +33,8 @@ const SearchLocation = ({ hook, status }) => {
                     }
                 ),
             );
+
+            // Set the hook.
             setPlaces(floatCoordinates);
         } catch(err) {
             // eslint-disable-next-line no-console
@@ -36,18 +44,23 @@ const SearchLocation = ({ hook, status }) => {
     };
 
     const label = { text: hook.name, capitalFirst: true };
+    const onChangeDir = (event) => setDir(event.target.value); 
+    const updateCoordinates = ([{ lat, lon }]) => {
+        setPlaces([{ lat, lon }]);
+        hook.onChange(`${lat},${lon}`);
+    };
 
     return (
         <Container>
             <TopSection>
-                <InputCustom label={label} {...hook}/>
-                <ButtonCustom text='Search' onClick={() => search()}/>
+                <InputCustom label={label} onChange={onChangeDir} value={dir}/>
+                <ButtonCustom text='Search' onClick={search}/>
             </TopSection>  
-            <MapCustom coordinates={places} loading={loading}/>
+            <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates}/>
         </Container>
     );
 };
 
-SearchLocation.propTypes = CharFieldProps;
+SearchLocation.propTypes = SearchLocationFieldProps;
 
 export default SearchLocation;
