@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const StyledToggle = styled.div`
-    background: #CBD2A4;
-    padding: 10px;
+    padding: 10px 0px 10px 10px;
     border-radius: 8px;
     border: solid #9A7E6F;
     overflow: hidden;
+    margin: 10px;
 `;
 
 export const StyledContent = styled.div`
