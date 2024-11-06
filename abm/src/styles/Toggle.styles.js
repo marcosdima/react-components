@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledToggle = styled.div`
-    padding: 10px 0px 10px 10px;
+    padding: 10px;
     border-radius: 8px;
     border: solid #9A7E6F;
     overflow: hidden;
