@@ -1,22 +1,10 @@
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
-import iconUrl from 'leaflet/dist/images/marker-icon.png';
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import PropTypes from 'prop-types';
-
-// Soluciona problemas de icono de marcador en Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl,
-    iconUrl,
-    shadowUrl,
-});
 
 const MapCustom = ({ coordinates }) => {
     // If no coordinates were provided, then retunrs empty obj.
-    if (!coordinates){
+    if (!coordinates || coordinates.length === 0){
         return <></>;
     }
 
@@ -26,7 +14,7 @@ const MapCustom = ({ coordinates }) => {
       <MapContainer
         center={center}
         zoom={13}
-        style={{ height: "100vh", width: "100%" }}
+        style={{ height: "50vh", width: "100%", borderRadius: '8px', border: 'solid #4C4B16' }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
