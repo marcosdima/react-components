@@ -6,6 +6,7 @@ const fieldType = Object.freeze({
     PASSWORD: 'password',
     SELECTOR: 'selector',
     TEXT_AREA: 'text_area',
+    SEARCH_LOCATION: 'search_location',
 });
 
 export default fieldType;

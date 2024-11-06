@@ -6,6 +6,7 @@ import ImageUrlField from "./ImageUrlField";
 import PasswordField from "./PasswordField";
 import SelectorField from "./SelectorField";
 import TextField from "./TextField";
+import SearchLocationField from "./SearchLocationField";
 
 const fields = {
     [fieldType.CHAR]: CharField,
@@ -15,6 +16,7 @@ const fields = {
     [fieldType.PASSWORD]: PasswordField,
     [fieldType.SELECTOR]: SelectorField,
     [fieldType.TEXT_AREA]: TextField,
+    [fieldType.SEARCH_LOCATION]: SearchLocationField,
 };
 
 export default fields;
