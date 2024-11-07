@@ -30,7 +30,7 @@ const ImageUrlField = ({ hook, status }) => {
             <TopSection>
                 <InputCustom {...hook} />
                 <ButtonCustom onClick={() => render()}>
-                    < SearchIcon/>
+                    <SearchIcon />
                 </ButtonCustom>
             </TopSection>  
             {image}

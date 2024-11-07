@@ -51,7 +51,7 @@ const Field = ({ type, name, onChange, placeholder='', label, required = false, 
         return <p>Error: component {type} does not exists</p>;
     }
 
-    return <FieldComponent hook={input} status={updateStatus} settings={settings}/>;
+    return <FieldComponent hook={input} status={updateStatus} settings={settings} />;
 };
 
 Field.propTypes = FieldProps;
