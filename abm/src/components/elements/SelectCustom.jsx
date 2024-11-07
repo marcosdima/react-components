@@ -41,6 +41,7 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
             ...provided,
             borderRadius: '0.25rem',
             boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.25)',
+            zIndex: 1000,
         }),
     };
 
