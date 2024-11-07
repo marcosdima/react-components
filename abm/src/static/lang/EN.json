@@ -23,10 +23,14 @@
             "TextField": {
                 "maxLength": "'%name%' has a limit of %maxLength% characters.",
                 "minLength": "'%name%' has a minimum of %minLength% characters."
+            },
+            "SearchLocationField": {
+                "noSelected": "'%name%' has no value, click on map to set it.",
+                "multiplePlaces": "'%name%' direction corresponds to multiple values."
             }
         },
         "generic": {
-            "OK": "'%name%' is OK!",
+            "ok": "'%name%' is OK!",
             "required": "'%name%' is required!",
             "notFound": "Not Found"
         }

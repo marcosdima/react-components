@@ -23,10 +23,14 @@
             "TextField": {
                 "maxLength": "'%name%' tiene un límite de %maxLength% caracteres.",
                 "minLength": "'%name%' tiene un mínimo de %minLength% caracteres."
+            },
+            "SearchLocationField": {
+                "noSelected": "'%name%' no tiene valor, haga click en el mapa para asginar.",
+                "multiplePlaces": "La direccion en '%name%' corresponde a múltiples ubicaciones."
             }
         },
         "generic": {
-            "OK": "'%name%' esta OK!",
+            "ok": "'%name%' esta OK!",
             "required": "'%name%' no puede estar en blanco!",
             "notFound": "Sin Respuesta"
         }
