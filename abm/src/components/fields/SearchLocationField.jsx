@@ -10,15 +10,26 @@ import ButtonCustom from "../elements/ButtonCustom";
 import MapCustom from "../elements/MapCustom";
 import SearchIcon from "../icons/SearchIcon";
 
-const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, defaultValue='' }}) => {
+const SearchLocationField = ({ hook, status, required, settings: { appendAtStart, appendAtEnd, defaultValue='' }}) => {
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(false);
     const [dir, setDir] = useState(defaultValue);
     const [render, setRender] = useState(false);
 
     useEffect(() => {
-        status(statusType.OK);
-    }, [places, status]);
+        const { length } = places;
+
+        if (length === 0 && required) {
+            status(statusType.ERROR, 'required', { name: hook.name });
+        }
+        else if (places.length > 1) {
+            status(statusType.ERROR, 'multiplePlaces', { name: hook.name, dir });
+        } else if (hook.value === '') {
+            status(required ? statusType.ERROR : statusType.WARNING, 'noSelected', { name: hook.name });
+        } else {
+            status(statusType.OK);
+        }
+    }, [places, status, hook.value, hook.name, dir, required]);
 
     const search = async () => {
         // Just set render as true with the first search.
@@ -77,6 +88,6 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
     );
 };
 
-SearchLocation.propTypes = SearchLocationFieldProps;
+SearchLocationField.propTypes = SearchLocationFieldProps;
 
-export default SearchLocation;
+export default SearchLocationField;
