@@ -6,7 +6,7 @@ import statusType from '../enums/statusType';
 import lang from '../enums/lang';
 import { translateFieldStatus, translateGenericStatus } from '../functions/translate';
 
-const Field = ({ type, name, onChange, placeholder='', label, required = false, settings={}, language=lang.EN }) => {
+const Field = ({ type, name, onChange, placeholder='', label, required=false, settings={}, language=lang.EN }) => {
     const input = useField(name, placeholder, label);
     const [status, setStatus] = useState({
         status: '',
@@ -25,33 +25,35 @@ const Field = ({ type, name, onChange, placeholder='', label, required = false, 
         if (!FieldComponent) {
             return;
         }
-
-        // Updates 'status'.
-        if (required && (!input.value || input.value === '')) {
-            // If required was settes as true and the user does not send an input.
+        
+        // If is required, then sends the generic message.
+        if (fieldStatusMessage === 'required') {
             setStatus({
                 status: statusType.ERROR, 
-                statusMessage: translateGenericStatus('required', {name: input.name}, language),
+                statusMessage: translateGenericStatus('required', variables, language),
             });
-        } else if (status === statusType.OK) {
-            // If the status is OK, then sends a generic message. (This may change in the future).
+        } 
+        // If the status is OK, then sends a generic message. (This may change in the future).
+        else if (status === statusType.OK) {     
             setStatus({
                 status, 
-                statusMessage: translateGenericStatus('OK', variables, language),
+                statusMessage: translateGenericStatus(status, variables, language),
             });
-        } else {
+        }
+        // Else, translate the field status provided.
+        else {
             setStatus({ 
                 status, 
                 statusMessage: translateFieldStatus(FieldComponent.name, fieldStatusMessage, variables, language),
             });
         }
-    }, [FieldComponent, input.name, input.value, required, language]);
+    }, [FieldComponent, language]);
 
     if (!FieldComponent) {
         return <p>Error: component {type} does not exists</p>;
     }
 
-    return <FieldComponent hook={input} status={updateStatus} settings={settings} />;
+    return <FieldComponent hook={input} status={updateStatus} settings={settings} required={required} />;
 };
 
 Field.propTypes = FieldProps;

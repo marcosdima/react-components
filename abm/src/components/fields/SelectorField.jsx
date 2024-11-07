@@ -3,22 +3,20 @@ import { SelectorFieldProps } from "../PropTypes";
 import SelectCustom from "../elements/SelectCustom";
 import statusType from "../../enums/statusType";
 
-const SelectorField = ({ hook, status, settings: { values } }) => {
+const SelectorField = ({ hook, status, required, settings: { values } }) => {
     useEffect(() => {
-        status(statusType.OK);
-    }, [status]);
+        if (required && hook.value === '') {
+            status(statusType.ERROR, 'required', { name: hook.name });
+        } else {
+            status(statusType.OK);
+        }
+    }, [hook.name, hook.value, required, status]);
 
     const onChangeValue = ({ value }) => {
         hook.onChange(value);
     };
 
-    return (
-        <SelectCustom
-            options={values}
-            onChange={onChangeValue}
-            placeholder="Selecciona una opción"
-        />
-    );
+    return (<SelectCustom onChange={onChangeValue} options={values} {...hook}/>);
 };
 
 SelectorField.propTypes = SelectorFieldProps;

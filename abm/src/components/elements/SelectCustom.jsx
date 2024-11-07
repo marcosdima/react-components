@@ -1,7 +1,9 @@
 import Select from 'react-select';
 import { SelectCustomProps } from '../PropTypes';
+import { Container } from '../../styles/Input.styles';
+import LabelCustom from './LabelCustom';
 
-const SelectCustom = ({ options, onChange, placeholder="Select an option..." }) => {
+const SelectCustom = ({ options, onChange, placeholder="Select an option...", label }) => {
     const customStyles = {
         container: (provided) => ({
             ...provided,
@@ -43,12 +45,15 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option..." }) 
     };
 
     return (
-        <Select
-            options={options}
-            onChange={onChange}
-            styles={customStyles}
-            placeholder={placeholder}
-        />
+        <Container>
+            <LabelCustom {...label}/>
+            <Select
+                options={options}
+                onChange={onChange}
+                styles={customStyles}
+                placeholder={placeholder}
+            />
+        </Container>
     );
 };
 

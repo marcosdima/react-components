@@ -22,10 +22,14 @@ const checkPassword = (pass, constraints) => {
     return [statusType.OK, `Password is OK!`];    
 };
 
-const PasswordField = ({ hook, status, settings }) => {
+const PasswordField = ({ hook, status, required, settings }) => {
     useEffect(() => {
-        status(...checkPassword(hook.value, settings));
-    }, [hook.name, hook.value, settings, status]);
+        if (required && hook.value === '') {
+            status(statusType.ERROR, 'required', { name: hook.name });
+        } else {
+            status(...checkPassword(hook.value, settings));
+        }
+    }, [hook.name, hook.value, required, settings, status]);
 
     return <InputCustom type="password" {...hook} />;
 };

@@ -38,6 +38,7 @@ const HookShape = PropTypes.shape({
 export const BasicShape = {
     hook: HookShape,
     status: PropTypes.func.isRequired,
+    required: PropTypes.bool.isRequired,
 };
 
 export const CharFieldProps = {
