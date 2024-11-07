@@ -12,11 +12,13 @@ const SelectorField = ({ hook, status, required, settings: { values } }) => {
         }
     }, [hook.name, hook.value, required, status]);
 
+    const { onChange, ...restHook } = hook;
+
     const onChangeValue = ({ value }) => {
-        hook.onChange(value);
+        onChange(value);
     };
 
-    return (<SelectCustom onChange={onChangeValue} options={values} {...hook}/>);
+    return (<SelectCustom onChange={onChangeValue} options={values} {...restHook} />);
 };
 
 SelectorField.propTypes = SelectorFieldProps;
