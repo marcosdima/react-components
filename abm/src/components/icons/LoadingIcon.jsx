@@ -1,4 +1,4 @@
-import { LoadingContainer, SpinnerIcon } from '../../styles/Loading.styles';
+import { LoadingContainer, SpinnerIcon } from '../../styles/icons/Loading.styles';
 
 const LoadingIcon = () => (
   <LoadingContainer>

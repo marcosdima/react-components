@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { SearchLocationFieldProps } from "../PropTypes";
+
 import statusType from "../../enums/statusType";
+import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
+import { getLocation } from "../../services/location";
+
 import InputCustom from "../elements/InputCustom";
 import ButtonCustom from "../elements/ButtonCustom";
-import { getLocation } from "../../services/location";
 import MapCustom from "../elements/MapCustom";
-import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
+import SearchIcon from "../icons/SearchIcon";
 
 const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, defaultValue='' }}) => {
     const [places, setPlaces] = useState([]);
@@ -54,7 +57,9 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
         <Container>
             <TopSection>
                 <InputCustom label={label} onChange={onChangeDir} value={dir}/>
-                <ButtonCustom onClick={search}>Search</ButtonCustom>
+                <ButtonCustom onClick={search}>
+                    <SearchIcon />
+                </ButtonCustom>
             </TopSection>  
             <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates}/>
         </Container>

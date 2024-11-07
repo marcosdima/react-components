@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+
+import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
 import { BasicShape } from "../PropTypes";
+
 import statusType from "../../enums/statusType";
 import InputCustom from "../elements/InputCustom";
-import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
 import ButtonCustom from "../elements/ButtonCustom";
+import SearchIcon from "../icons/SearchIcon";
 
 const ImageUrlField = ({ hook, status }) => {
     const [image, setImage] = useState(<></>);
@@ -26,7 +29,9 @@ const ImageUrlField = ({ hook, status }) => {
         <Container>
             <TopSection>
                 <InputCustom {...hook} />
-                <ButtonCustom onClick={() => render()}>Search</ButtonCustom>/
+                <ButtonCustom onClick={() => render()}>
+                    < SearchIcon/>
+                </ButtonCustom>
             </TopSection>  
             {image}
         </Container>
