@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
     font-family: ${({ theme }) => theme.fontFamily};
-    padding: 10px 20px;
+    padding: 4.3% 6%;
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
     background-color: #0056b3;
     border: 2px solid #0056b3;
     border-radius: 5px;

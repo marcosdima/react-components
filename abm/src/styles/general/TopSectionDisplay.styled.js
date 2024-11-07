@@ -10,9 +10,7 @@ const Container = styled.div`
 
 const TopSection = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2px;
+  align-items: flex-end;
 `;
 
 export { Container, TopSection };

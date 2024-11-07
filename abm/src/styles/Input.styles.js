@@ -7,7 +7,6 @@ const StyledInput = styled.input`
   border-radius: 5px;
   outline: none;
   transition: border-color 0.3s ease;
-  margin-bottom: 8px;
 
   &:focus {
       border-color: #4C4B16;
@@ -21,7 +20,6 @@ export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   justify-content: space-between;
-  padding-bottom: 18px;
 `;
 
 export default StyledInput;
