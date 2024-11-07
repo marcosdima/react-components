@@ -14,13 +14,22 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(false);
     const [dir, setDir] = useState(defaultValue);
+    const [render, setRender] = useState(false);
 
     useEffect(() => {
         status(statusType.OK);
     }, [places, status]);
 
     const search = async () => {
+        // Just set render as true with the first search.
+        if (!render) {
+            setRender(true);
+        }
+
+        // Set loading as true, to show the loading icon.
         setLoading(true);
+
+        // Try to fetch dir coordinates.
         try {
             // Fetch the places which matched dir.
             const start = appendAtStart ? (appendAtStart + ', ') : '';
@@ -43,6 +52,8 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
             // eslint-disable-next-line no-console
             console.log(err);
         }
+
+        // In any case, set loading as false.
         setLoading(false);
     };
 
@@ -61,7 +72,7 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
                     <SearchIcon />
                 </ButtonCustom>
             </TopSection>  
-            <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates}/>
+            <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates} render={render}/>
         </Container>
     );
 };

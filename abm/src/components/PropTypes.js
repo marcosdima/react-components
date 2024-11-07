@@ -148,4 +148,5 @@ export const MapCustomProps = {
     ).isRequired,
     loading: PropTypes.bool.isRequired,
     updateCoordinates: PropTypes.func,
+    render: PropTypes.bool.isRequired,
 };

@@ -1,8 +1,12 @@
-import { MapContainer, TileLayer, Marker, useMap, useMapEvent } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapCustomProps } from '../PropTypes';
 import { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, useMap, useMapEvent } from 'react-leaflet';
+//import { FaMapMarkerAlt } from 'react-icons/fa';
+
+import { MapCustomProps } from '../PropTypes';
+
 import LoadingIcon from '../icons/LoadingIcon';
+import NotFound from '../icons/NotFound';
 
 // eslint-disable-next-line react/prop-types
 const ChangeView = ({ center }) => {
@@ -39,14 +43,18 @@ const SelectPosition = ({ onClick }) => {
   return null;
 };
 
-const MapCustom = ({ coordinates, loading, updateCoordinates }) => {
-    // If no coordinates were provided, then returns empty obj.
-    if (coordinates.length === 0 && !loading){
-        return <></>;
+const MapCustom = ({ coordinates, loading, updateCoordinates, render }) => {
+    if (!render) {
+      return <></>;
     }
 
+    // If no coordinates were provided and is not loading, then returns not found.
+    if (coordinates.length === 0 && !loading){
+      return <NotFound />;
+    }
+  
     // If is loading, then shows an icon.
-    if (loading) {
+    if (loading) {    
       return <LoadingIcon />;
     }
 
