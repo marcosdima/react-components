@@ -27,7 +27,8 @@
         },
         "generic": {
             "OK": "'%name%' is OK!",
-            "required": "'%name%' is required!"
+            "required": "'%name%' is required!",
+            "notFound": "Not Found"
         }
     }
 }

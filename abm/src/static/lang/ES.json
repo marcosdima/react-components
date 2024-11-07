@@ -27,7 +27,8 @@
         },
         "generic": {
             "OK": "'%name%' esta OK!",
-            "required": "'%name%' no puede estar en blanco!"
+            "required": "'%name%' no puede estar en blanco!",
+            "notFound": "Sin Respuesta"
         }
     }
 }
