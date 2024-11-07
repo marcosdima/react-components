@@ -26,7 +26,7 @@ const ImageUrlField = ({ hook, status }) => {
         <Container>
             <TopSection>
                 <InputCustom {...hook} />
-                <ButtonCustom text='Search' onClick={() => render()}/>
+                <ButtonCustom onClick={() => render()}>Search</ButtonCustom>/
             </TopSection>  
             {image}
         </Container>

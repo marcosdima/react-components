@@ -108,7 +108,6 @@ export const InputCustomProps = {
 };
 
 export const ButtonCustomProps = {
-    text: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
     disabled: PropTypes.bool,

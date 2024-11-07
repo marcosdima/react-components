@@ -54,7 +54,7 @@ const SearchLocation = ({ hook, status, settings: { appendAtStart, appendAtEnd, 
         <Container>
             <TopSection>
                 <InputCustom label={label} onChange={onChangeDir} value={dir}/>
-                <ButtonCustom text='Search' onClick={search}/>
+                <ButtonCustom onClick={search}>Search</ButtonCustom>
             </TopSection>  
             <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates}/>
         </Container>
