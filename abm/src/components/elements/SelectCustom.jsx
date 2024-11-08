@@ -8,7 +8,6 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
         container: (provided) => ({
             ...provided,
             width: '100%',
-            marginBottom: '1rem',
         }),
         control: (provided, state) => ({
             ...provided,
