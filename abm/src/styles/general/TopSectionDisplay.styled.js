@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 0.3rem
 `;
 
 const TopSection = styled.div`
@@ -12,4 +13,10 @@ const TopSection = styled.div`
   gap: 0.1rem;
 `;
 
-export { Container, TopSection };
+const Item = styled.div`
+  flex-grow: ${({ priority=1 }) => (priority)};
+  flex-shrink: 0;
+  flex-basis: auto;
+`;
+
+export { Container, TopSection, Item };
