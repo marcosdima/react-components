@@ -66,7 +66,7 @@ const MapCustom = ({ coordinates, loading, updateCoordinates, render }) => {
       <MapContainer
         center={center}
         zoom={13}
-        style={{ height: "50vh", width: "100%", borderRadius: '8px', border: 'solid #4C4B16' }}
+        style={{ height: "50vh", width: "inherit", borderRadius: '8px', border: 'solid #4C4B16' }}
         >
         <ChangeView center={center} />
         <SelectPosition onClick={changeCoordinates} />
