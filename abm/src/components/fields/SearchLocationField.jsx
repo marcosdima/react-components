@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { SearchLocationFieldProps } from "../PropTypes";
 
 import statusType from "../../enums/statusType";
-import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
+import { Container, TopSection, Item } from "../../styles/general/TopSectionDisplay.styled";
 import { getLocation } from "../../services/location";
 
 import InputCustom from "../elements/InputCustom";
@@ -78,10 +78,15 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
     return (
         <Container>
             <TopSection>
-                <InputCustom label={label} onChange={onChangeDir} value={dir}/>
-                <ButtonCustom onClick={search}>
-                    <SearchIcon />
-                </ButtonCustom>
+                {/* Priority equal to 2 means more space for the component */}
+                <Item priority={2}>
+                    <InputCustom label={label} onChange={onChangeDir} value={dir}/>
+                </Item>
+                <Item>
+                    <ButtonCustom onClick={search}>
+                        <SearchIcon />
+                    </ButtonCustom>
+                </Item>  
             </TopSection>  
             <MapCustom coordinates={places} loading={loading} updateCoordinates={updateCoordinates} render={render}/>
         </Container>
