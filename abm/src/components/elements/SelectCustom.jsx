@@ -17,6 +17,7 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
             '&:hover': {
                 borderColor: '#9A7E6F',
             },
+            cursor: 'pointer',
         }),
         option: (provided, state) => ({
             ...provided,
@@ -26,10 +27,11 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
             padding: '8px',
             width: '90%',
             margin: '2px auto',
-            display: 'flex',
+            display: state.isSelected ? 'none' : 'flex',
             justifyContent: 'center',
+            cursor: 'pointer',
             '&:hover': {
-                backgroundColor: state.isSelected ? '#54473F' : '#FFC55A',
+                backgroundColor: '#ccc',
             },
         }),     
         singleValue: (provided) => ({
@@ -41,6 +43,10 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
             borderRadius: '0.25rem',
             boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.25)',
             zIndex: 1000,
+        }),  
+        input: (provided) => ({
+            ...provided,
+            caretColor: 'transparent',
         }),
     };
 
