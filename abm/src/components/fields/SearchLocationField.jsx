@@ -79,7 +79,7 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
         <Container>
             <TopSection>
                 {/* Priority equal to 2 means more space for the component */}
-                <Item priority={2}>
+                <Item $priority={2}>
                     <InputCustom label={label} onChange={onChangeDir} value={dir}/>
                 </Item>
                 <Item>

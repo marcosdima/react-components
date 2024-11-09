@@ -14,7 +14,7 @@ const TopSection = styled.div`
 `;
 
 const Item = styled.div`
-  flex-grow: ${({ priority=1 }) => (priority)};
+  flex-grow: ${({ $priority=1 }) => ($priority)};
   flex-shrink: 0;
   flex-basis: auto;
 `;
