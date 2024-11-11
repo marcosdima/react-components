@@ -1,20 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-const bounceIn = keyframes`
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
-
 const pulse = keyframes`
   0% {
     box-shadow: 0 0 5px rgba(76, 75, 22, 0.5);
@@ -27,9 +12,16 @@ const pulse = keyframes`
   }
 `;
 
+export const UbiWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+    widht: 100%;
+  height: 100%;
+`;
+
 export default styled.div`
-  width: 40px;
-  height: 40px;
+  width: 7rem;
+  height: 7rem;
   background-color: #9a7e6f;
   border-radius: 50%;
   display: flex;
@@ -38,5 +30,4 @@ export default styled.div`
   font-size: 1.5rem;
   color: white;
   animation: ${pulse} 1.5s ease-in-out infinite;
-  cursor: pointer;
 `;

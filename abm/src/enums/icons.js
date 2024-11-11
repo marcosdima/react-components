@@ -1,7 +1,7 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const icons = {
-    ubiMarker: FaMapMarkerAlt, 
+    UbiMarker: FaMapMarkerAlt, 
 };
 
 export const keys = {};

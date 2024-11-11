@@ -8,6 +8,7 @@ const StyledTextArea = styled.textarea`
     transition: border-color 0.3s ease;
     margin-bottom: 8px;
     resize: none;
+    height: 100%;
 
     &:focus {
         border-color: #4C4B16;
