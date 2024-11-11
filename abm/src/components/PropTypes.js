@@ -3,6 +3,7 @@ import fieldType from '../enums/fieldType';
 import emailDomain from '../enums/emailDomain';
 import statusType from '../enums/statusType';
 import lang from '../enums/lang';
+import { keys } from '../enums/icons';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
@@ -150,4 +151,9 @@ export const MapCustomProps = {
     loading: PropTypes.bool.isRequired,
     updateCoordinates: PropTypes.func,
     render: PropTypes.bool.isRequired,
+};
+
+// -- Icons -- //
+export const NotFoundProps = {
+    icon: PropTypes.oneOf(Object.values(keys)).isRequired,
 };
