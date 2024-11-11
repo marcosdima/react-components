@@ -32,7 +32,10 @@
         "generic": {
             "ok": "'%name%' is OK!",
             "required": "'%name%' is required!",
-            "notFound": "Not Found"
+            "notFound": "Not Found",
+            "show": "Show",
+            "ocult": "Ocult",
+            "submit": "Submit"
         }
     }
 }

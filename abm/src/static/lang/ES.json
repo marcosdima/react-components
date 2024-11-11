@@ -32,7 +32,10 @@
         "generic": {
             "ok": "'%name%' esta OK!",
             "required": "'%name%' no puede estar en blanco!",
-            "notFound": "Sin Respuesta"
+            "notFound": "Sin Respuesta",
+            "show": "Mostrar",
+            "ocult": "Ocultar",
+            "submit": "Enviar"
         }
     }
 }
