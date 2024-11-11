@@ -15,8 +15,6 @@ const pulse = keyframes`
 export const UbiWrapper = styled.div`
   display: flex;
   justify-content: center;
-    widht: 100%;
-  height: 100%;
 `;
 
 export default styled.div`
