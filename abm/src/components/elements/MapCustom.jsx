@@ -47,8 +47,8 @@ const SelectPosition = ({ onClick }) => {
 const MapCustom = ({ coordinates, loading, updateCoordinates, render }) => {
   // If no coordinates were provided and is not loading, then returns not found.
   if (coordinates?.length === 0 && !loading && render){
-    const { ubiMarker } = keys;
-    return <NotFound icon={ubiMarker}/>;
+    const { UbiMarker } = keys;
+    return <NotFound icon={UbiMarker}/>;
   }
   // If is loading, then shows an icon.
   else if (loading) {    
