@@ -32,7 +32,6 @@ const GridContainer = ({ items }) => {
                                 gridRow: row + 1,
                                 gridColumn: col + 1,
                                 gridColumnEnd: col === aux[row] && col < maxCol ? `span ${maxCol + 1}` : 'auto',
-                                border: "solid",
                             }
                         }
                         >
@@ -45,7 +44,6 @@ const GridContainer = ({ items }) => {
   );
 };
 
-// Define las props esperadas
 GridContainer.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
