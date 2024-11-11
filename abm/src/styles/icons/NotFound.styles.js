@@ -24,7 +24,6 @@ export const NotFoundContainer = styled.div`
 export const NotFoundWrapper = styled.div`
     display: inline-block;
     animation: ${rotate} 2s linear infinite;
-    padding-top: 1.5%;
 `;
 
 export const Text = styled.p`
