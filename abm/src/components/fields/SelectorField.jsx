@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { SelectorFieldProps } from "../PropTypes"; 
 import SelectCustom from "../elements/SelectCustom";
-import statusType from "../../enums/statusType";
+import statusType from "../../utils/enums/statusType";
 
 const SelectorField = ({ hook, status, required, settings: { values } }) => {
     useEffect(() => {

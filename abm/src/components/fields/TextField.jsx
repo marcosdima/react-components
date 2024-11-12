@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { CharFieldProps } from "../PropTypes";
-import statusType from "../../enums/statusType";
+import statusType from "../../utils/enums/statusType";
 import TextAreaCustom from "../elements/TextAreaCustom";
 
 const TextField = ({ hook, status, required, settings: { maxLength, minLength } }) => {

@@ -1,6 +1,6 @@
 import BaseForm from "./components/BasicForm";
-import emailDomain from "./enums/emailDomain";
-import fieldType from "./enums/fieldType";
+import emailDomain from "./utils/enums/emailDomain";
+import fieldType from "./utils/enums/fieldType";
 
 function App() {
   const fields = [

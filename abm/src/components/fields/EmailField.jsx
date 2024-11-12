@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { CharFieldProps } from "../PropTypes";
-import statusType from "../../enums/statusType";
+import statusType from "../../utils/enums/statusType";
 import InputCustom from "../elements/InputCustom";
 
 function EmailField({ hook, status, required, settings: { validDomains } }) {

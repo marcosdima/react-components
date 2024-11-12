@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { PasswordFieldProps } from "../PropTypes";
-import statusType from "../../enums/statusType";
-import strings from "../../functions/strings";
+import statusType from "../../utils/enums/statusType";
+import strings from "../../utils/functions/strings";
 import InputCustom from "../elements/InputCustom";
 
 const PasswordField = ({ hook, status, required, settings: { minLength, alphaNumeric, signs } }) => {

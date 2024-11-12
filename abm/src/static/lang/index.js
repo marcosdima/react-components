@@ -1,4 +1,4 @@
-import lang from "../../enums/lang";
+import lang from "../../utils/enums/lang";
 import EN from './EN.json';
 import ES from './ES.json';
 

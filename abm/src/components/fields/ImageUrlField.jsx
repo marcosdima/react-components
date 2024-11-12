@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Container, TopSection } from "../../styles/general/TopSectionDisplay.styled";
 import { BasicShape } from "../PropTypes";
 
-import statusType from "../../enums/statusType";
+import statusType from "../../utils/enums/statusType";
 import InputCustom from "../elements/InputCustom";
 import ButtonCustom from "../elements/ButtonCustom";
 import SearchIcon from "../icons/SearchIcon";

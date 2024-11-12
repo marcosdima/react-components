@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import fieldType from '../enums/fieldType';
-import emailDomain from '../enums/emailDomain';
-import statusType from '../enums/statusType';
-import lang from '../enums/lang';
-import { keys } from '../enums/icons';
-import inputType from '../enums/inputType';
+import fieldType from '../utils/enums/fieldType';
+import emailDomain from '../utils/enums/emailDomain';
+import statusType from '../utils/enums/statusType';
+import lang from '../utils/enums/lang';
+import { keys } from '../utils/enums/icons';
+import inputType from '../utils/enums/inputType';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,

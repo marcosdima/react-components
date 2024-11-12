@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SearchLocationFieldProps } from "../PropTypes";
 
-import statusType from "../../enums/statusType";
+import statusType from "../../utils/enums/statusType";
 import { Container, TopSection, Item } from "../../styles/general/TopSectionDisplay.styled";
 import { getLocation } from "../../services/location";
 

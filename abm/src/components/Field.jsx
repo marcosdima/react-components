@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { FieldProps } from './PropTypes';
 import fields from './fields';
 import useField from '../hooks/useField';
-import statusType from '../enums/statusType';
-import lang from '../enums/lang';
-import { translateFieldStatus, translateGenericStatus } from '../functions/translate';
+import statusType from '../utils/enums/statusType';
+import lang from '../utils/enums/lang';
+import { translateFieldStatus, translateGenericStatus } from '../utils/functions/translate';
 
 const Field = ({ type, name, onChange, placeholder='', label, required=false, settings={}, language=lang.EN }) => {
     const input = useField(name, placeholder, label);

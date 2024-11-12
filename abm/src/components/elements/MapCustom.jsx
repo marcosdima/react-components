@@ -6,7 +6,7 @@ import { MapCustomProps } from '../PropTypes';
 
 import LoadingIcon from '../icons/LoadingIcon';
 import NotFound from '../icons/NotFound';
-import { keys } from '../../enums/icons';
+import { keys } from '../../utils/enums/icons';
 import UbiIcon from '../icons/UbiIcon';
 
 // eslint-disable-next-line react/prop-types

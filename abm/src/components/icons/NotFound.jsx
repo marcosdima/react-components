@@ -1,8 +1,8 @@
 import { NotFoundContainer, NotFoundWrapper, Text } from '../../styles/icons/NotFound.styles';
-import { translateGenericStatus } from '../../functions/translate';
-import lang from '../../enums/lang';
+import { translateGenericStatus } from '../../utils/functions/translate';
+import lang from '../../utils/enums/lang';
 import { NotFoundProps } from '../PropTypes';
-import icons from '../../enums/icons';
+import icons from '../../utils/enums/icons';
 
 const NotFound = ({ icon }) => {
   const text = translateGenericStatus('notFound', {}, lang.ES);

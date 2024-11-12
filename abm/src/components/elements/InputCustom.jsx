@@ -1,4 +1,4 @@
-import inputType from "../../enums/inputType";
+import inputType from "../../utils/enums/inputType";
 import StyledInput, { Container } from "../../styles/Input.styles";
 import { InputCustomProps } from "../PropTypes";
 import LabelCustom from "./LabelCustom";

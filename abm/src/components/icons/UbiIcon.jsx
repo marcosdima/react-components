@@ -1,4 +1,4 @@
-import icons from '../../enums/icons';
+import icons from '../../utils/enums/icons';
 import UbiStyles, { UbiWrapper } from '../../styles/icons/Ubi.styles';
 
 

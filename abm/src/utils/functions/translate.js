@@ -1,5 +1,5 @@
 import lang from "../enums/lang";
-import { json } from "../static/lang";
+import { json } from "../../static/lang";
 
 /*
     ATTENTION!!!

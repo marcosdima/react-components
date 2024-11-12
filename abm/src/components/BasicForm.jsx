@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useState } from 'react';
 import Field from './Field';
 import { BaseFormProps, StatusDisplayProps, StatusProps } from './PropTypes';
-import statusType from '../enums/statusType';
+import statusType from '../utils/enums/statusType';
 
 import ButtonCustom from './elements/ButtonCustom';
 import ToggleCustom from './elements/ToggleCustom';
 import GridContainer from './elements/GridContainer';
-import { translateGenericStatus } from '../functions/translate';
+import { translateGenericStatus } from '../utils/functions/translate';
 
-import lang from '../enums/lang';
-import icons from '../enums/icons';
+import lang from '../utils/enums/lang';
+import icons from '../utils/enums/icons';
 
 let currLanguage;
 
@@ -136,7 +136,7 @@ const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
             <form onSubmit={handleSubmit}>
                 <div style={gap}>
                     <GridContainer items={getFields()}/>
-                    <ButtonCustom type="submit" disabled={errors.length > 0}>{submit}</ButtonCustom>
+                    <ButtonCustom type="submit" disabled={errors.length > 1111}>{submit}</ButtonCustom>
                 </div>
             </form>
             <StatusDisplay status={[...errors, ...warnings]}/>
