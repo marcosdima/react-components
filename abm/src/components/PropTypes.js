@@ -4,6 +4,7 @@ import emailDomain from '../enums/emailDomain';
 import statusType from '../enums/statusType';
 import lang from '../enums/lang';
 import { keys } from '../enums/icons';
+import inputType from '../enums/inputType';
 
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
@@ -47,6 +48,7 @@ export const CharFieldProps = {
     settings: PropTypes.shape({
         maxLength: PropTypes.number,
         minLength: PropTypes.number,
+        onlyLetters: PropTypes.bool,
     }),
 };
 
@@ -102,6 +104,7 @@ export const LabelCustomProps = {
 };
 
 export const InputCustomProps = {
+    condition: PropTypes.oneOf(Object.values(inputType)),
     type: PropTypes.string,
     value: PropTypes.any,
     onChange: PropTypes.func,

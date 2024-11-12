@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { NumberFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
-import InputNumberCustom from "../elements/InputNumberCustom";
+import InputCustom from "../elements/InputCustom";
+import inputType from "../../enums/inputType";
 
 const NumberField = ({ hook, status, required, settings: { max, min } }) => {
     useEffect(() => {
@@ -19,7 +20,7 @@ const NumberField = ({ hook, status, required, settings: { max, min } }) => {
         }
     }, [hook.name, hook.value, max, min, required, status]);
 
-    return <InputNumberCustom {...hook} />;
+    return <InputCustom condition={inputType.NUMBERS} {...hook} />;
 };
 
 NumberField.propTypes = NumberFieldProps;
