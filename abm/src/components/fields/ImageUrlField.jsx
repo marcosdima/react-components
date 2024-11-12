@@ -43,5 +43,6 @@ const ImageUrlField = ({ hook, status, required }) => {
 };
 
 ImageUrlField.propTypes = BasicShape;
+ImageUrlField.displayName = 'ImageUrlField';
 
 export default ImageUrlField;

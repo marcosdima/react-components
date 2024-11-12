@@ -23,5 +23,6 @@ const NumberField = ({ hook, status, required, settings: { max, min } }) => {
 };
 
 NumberField.propTypes = NumberFieldProps;
+NumberField.displayName = 'NumberField';
 
 export default NumberField;

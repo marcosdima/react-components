@@ -20,5 +20,6 @@ const CharField = ({ hook, status, required, settings: { maxLength, minLength } 
 };
 
 CharField.propTypes = CharFieldProps;
+CharField.displayName = 'CharField';
 
 export default CharField;

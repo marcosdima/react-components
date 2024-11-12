@@ -3,7 +3,7 @@ import { CharFieldProps } from "../PropTypes";
 import statusType from "../../enums/statusType";
 import InputCustom from "../elements/InputCustom";
 
-const EmailField = ({ hook, status, required, settings: { validDomains } }) => {
+function EmailField({ hook, status, required, settings: { validDomains } }) {
     useEffect(() => {
         const email = hook.value;
         const [, emailDomain] = email.split('@');
@@ -24,6 +24,7 @@ const EmailField = ({ hook, status, required, settings: { validDomains } }) => {
 };
 
 EmailField.propTypes = CharFieldProps;
+EmailField.displayName = 'EmailField';
 
 export default EmailField;
 

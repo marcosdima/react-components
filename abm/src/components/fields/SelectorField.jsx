@@ -22,5 +22,6 @@ const SelectorField = ({ hook, status, required, settings: { values } }) => {
 };
 
 SelectorField.propTypes = SelectorFieldProps;
+SelectorField.displayName = 'SelectorField';
 
 export default SelectorField;

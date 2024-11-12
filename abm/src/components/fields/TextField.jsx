@@ -20,5 +20,6 @@ const TextField = ({ hook, status, required, settings: { maxLength, minLength } 
 };
 
 TextField.propTypes = CharFieldProps;
+TextField.displayName = 'TextField';
 
 export default TextField;

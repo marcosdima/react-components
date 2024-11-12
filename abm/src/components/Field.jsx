@@ -20,6 +20,11 @@ const Field = ({ type, name, onChange, placeholder='', label, required=false, se
 
     const FieldComponent = fields[type];
 
+    // Checks that FieldComponent has displayName.
+    if (!FieldComponent.displayName) {
+        throw new Error(`Missing displayName of ${FieldComponent.name}`);
+    }
+
     const updateStatus = useCallback((status, fieldStatusMessage='generic', variables={}) => {
         // Validates that FieldComponent exists.
         if (!FieldComponent) {
@@ -44,7 +49,7 @@ const Field = ({ type, name, onChange, placeholder='', label, required=false, se
         else {
             setStatus({ 
                 status, 
-                statusMessage: translateFieldStatus(FieldComponent.name, fieldStatusMessage, variables, language),
+                statusMessage: translateFieldStatus(FieldComponent.displayName, fieldStatusMessage, variables, language),
             });
         }
     }, [FieldComponent, language]);

@@ -33,5 +33,6 @@ const PasswordField = ({ hook, status, required, settings: { minLength, alphaNum
 };
 
 PasswordField.propTypes = PasswordFieldProps;
+PasswordField.displayName = 'PasswordField';
 
 export default PasswordField;

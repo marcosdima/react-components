@@ -94,5 +94,6 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
 };
 
 SearchLocationField.propTypes = SearchLocationFieldProps;
+SearchLocationField.displayName = 'SearchLocationField';
 
 export default SearchLocationField;
