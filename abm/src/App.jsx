@@ -28,6 +28,7 @@ function App() {
       required:true,
       settings: {
         validDomains: [emailDomain.GMAIL],
+        countryCodes: ['.ar', '.uru'],
       },
       row: 0,
       col: 2,
@@ -103,7 +104,7 @@ function App() {
       // eslint-disable-next-line no-console
       onSubmit={(data) => console.log(data)}
       style={{width: '100%', heigth: '100%'}}
-      language="EN"
+      language="ES"
     />
   );
 }

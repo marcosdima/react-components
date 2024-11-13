@@ -7,7 +7,8 @@
             },
             "EmailField": {
                 "wrongFormat": "'%name%' no tiene un formato válido.",
-                "invalidDomain": "'%name%' no tiene un dominio válido."
+                "invalidDomain": "'%name%' no tiene un dominio válido.",
+                "invalidCountryCode": "'%name%' solo acepta: %countryCode%."
             },
             "NumberField": {
                 "max": "'%name%' tiene un máximo establecido en %max%",
