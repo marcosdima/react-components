@@ -136,7 +136,7 @@ const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
             <form onSubmit={handleSubmit}>
                 <div style={gap}>
                     <GridContainer items={getFields()}/>
-                    <ButtonCustom type="submit" disabled={errors.length > 1111}>{submit}</ButtonCustom>
+                    <ButtonCustom type="submit" disabled={errors.length > 1}>{submit}</ButtonCustom>
                 </div>
             </form>
             <StatusDisplay status={[...errors, ...warnings]}/>
