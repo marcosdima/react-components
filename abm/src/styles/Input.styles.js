@@ -7,7 +7,7 @@ const StyledInput = styled.input`
   transition: border-color 0.3s ease;
   outline: none;
   &:focus {
-      border-color: #4C4B16;
+    border-color: #4C4B16;
   }
 `;
 
