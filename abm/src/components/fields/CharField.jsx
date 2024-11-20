@@ -9,15 +9,15 @@ const CharField = ({ hook, status, required, settings: { maxLength, minLength, o
 
     useEffect(() => {
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         } else if (maxLength && hook.value.length > maxLength) {
-            status(statusType.ERROR, 'maxLength', { name: hook.name, maxLength });
+            status(statusType.ERROR, 'maxLength', { name: hook.label, maxLength });
         } else if (minLength && hook.value.length < minLength) {
-            status(statusType.ERROR, 'minLength', { name: hook.name, minLength });
+            status(statusType.ERROR, 'minLength', { name: hook.label, minLength });
         } else {
             status(statusType.OK);
         }
-    }, [status, hook.value, hook.name, maxLength, minLength, required]);
+    }, [status, hook.value, hook.label, maxLength, minLength, required]);
 
     // Sets condition if onlyLetters setting is provided.
     useEffect(() => {

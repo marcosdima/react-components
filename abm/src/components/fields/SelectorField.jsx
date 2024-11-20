@@ -6,11 +6,11 @@ import statusType from "../../utils/enums/statusType";
 const SelectorField = ({ hook, status, required, settings: { values } }) => {
     useEffect(() => {
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         } else {
             status(statusType.OK);
         }
-    }, [hook.name, hook.value, required, status]);
+    }, [hook.label, hook.value, required, status]);
 
     const { onChange, ...restHook } = hook;
 

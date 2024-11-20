@@ -23,11 +23,11 @@ const PasswordField = ({ hook, status, required, settings: { minLength, alphaNum
         };
 
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         } else {
             status(...checkPassword(hook.value));
         }
-    }, [hook.name, hook.value, required, status, minLength, alphaNumeric, signs]);
+    }, [hook.label, hook.value, required, status, minLength, alphaNumeric, signs]);
 
     return <InputCustom type="password" {...hook} />;
 };

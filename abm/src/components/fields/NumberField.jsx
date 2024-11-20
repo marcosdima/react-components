@@ -7,10 +7,10 @@ import inputType from "../../utils/enums/inputType";
 const NumberField = ({ hook, status, required, settings: { max, min } }) => {
     useEffect(() => {
         const num = parseInt(hook.value);
-        const name = hook.name;
+        const name = hook.label;
 
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name });
         } else if (max && num > max) {
             status(statusType.ERROR, 'max', { name, max: max });
         } else if (min && num < min) {
@@ -18,7 +18,7 @@ const NumberField = ({ hook, status, required, settings: { max, min } }) => {
         } else {
             status(statusType.OK);
         }
-    }, [hook.name, hook.value, max, min, required, status]);
+    }, [hook.label, hook.value, max, min, required, status]);
 
     return <InputCustom condition={inputType.NUMBERS} {...hook} />;
 };

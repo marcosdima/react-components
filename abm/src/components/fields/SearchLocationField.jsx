@@ -20,16 +20,16 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
         const { length } = places;
 
         if (length === 0 && required) {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         }
         else if (places.length > 1) {
-            status(statusType.ERROR, 'multiplePlaces', { name: hook.name, dir });
+            status(statusType.ERROR, 'multiplePlaces', { name: hook.label, dir });
         } else if (hook.value === '') {
-            status(required ? statusType.ERROR : statusType.WARNING, 'noSelected', { name: hook.name });
+            status(required ? statusType.ERROR : statusType.WARNING, 'noSelected', { name: hook.label });
         } else {
             status(statusType.OK);
         }
-    }, [places, status, hook.value, hook.name, dir, required]);
+    }, [places, status, hook.value, hook.label, dir, required]);
 
     const search = async () => {
         // Just set render as true with the first search.

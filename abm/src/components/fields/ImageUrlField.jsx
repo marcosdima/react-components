@@ -13,11 +13,11 @@ const ImageUrlField = ({ hook, status, required }) => {
 
     useEffect(() => {
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         } else {
             status(statusType.OK);
         }
-    }, [hook.name, hook.value, required, status]);
+    }, [hook.label, hook.value, required, status]);
 
     const render = () => {
         return setImage(

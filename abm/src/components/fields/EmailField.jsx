@@ -12,17 +12,17 @@ function EmailField({ hook, status, required, settings: { validDomains, countryC
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (required && hook.value === '') {
-            status(statusType.ERROR, 'required', { name: hook.name });
+            status(statusType.ERROR, 'required', { name: hook.label });
         } else if (!regex.test(email)) {
-            status(statusType.ERROR, 'wrongFormat', { name: hook.name });
+            status(statusType.ERROR, 'wrongFormat', { name: hook.label });
         } else if (validDomains && (!validDomains.find((domain) => emailDomain.startsWith(domain)))) {
-            status(statusType.ERROR, 'invalidDomain', { name: hook.name });
+            status(statusType.ERROR, 'invalidDomain', { name: hook.label });
         } else if (countryCodes && end !== '' && (!countryCodes.some((code) => code === end))) {
-            status(statusType.ERROR, 'invalidCountryCode', { name: hook.name, countryCode: countryCodes.join(', ') });
+            status(statusType.ERROR, 'invalidCountryCode', { name: hook.label, countryCode: countryCodes.join(', ') });
         } else {
             status(statusType.OK);
         }
-    }, [countryCodes, hook.name, hook.value, hook.value.length, required, status, validDomains]);
+    }, [countryCodes, hook.label, hook.value, hook.value.length, required, status, validDomains]);
 
     return <InputCustom {...hook} />;
 };
