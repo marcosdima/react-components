@@ -59,7 +59,7 @@ const StatusDisplay = ({ status }) => {
     );
 };
 
-const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
+const BasicForm = ({ style, fields, onSubmit, observeThis={}, language=lang.ES, ...props }) => {
     const [fieldsValues, setFieldsValues] = useState({});
     const [status, setStatus] = useState({});
 
@@ -89,7 +89,10 @@ const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
             ...prevStatus,
             [name]: statusUpdate,
         }));
-    }, []);
+        if (name in observeThis) {
+            observeThis[name](value);
+        }
+    }, [observeThis]);
 
     /**
      * Get fields.
@@ -104,7 +107,14 @@ const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
                 {
                     row,
                     col,
-                    content: (<Field key={index} onChange={fieldsChange} language={language} {...field}/>),
+                    content: (
+                        <Field
+                            key={index}
+                            onChange={fieldsChange}
+                            language={language}
+                            {...field}
+                            />
+                    ),
                 }
             ))
         );
@@ -132,7 +142,7 @@ const BasicForm = ({ style, fields, onSubmit, language=lang.ES }) => {
     const submit = translateGenericStatus('submit', {}, language);
 
     return (
-        <div style={style}>
+        <div style={style} {...props} >
             <form onSubmit={handleSubmit}>
                 <div style={gap}>
                     <GridContainer items={getFields()}/>
