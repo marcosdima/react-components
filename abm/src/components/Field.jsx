@@ -6,7 +6,7 @@ import statusType from '../utils/enums/statusType';
 import lang from '../utils/enums/lang';
 import { translateFieldStatus, translateGenericStatus } from '../utils/functions/translate';
 
-const Field = ({ type, name, onChange, placeholder='', label, required=false, settings={}, language=lang.EN }) => {
+const Field = ({ type, name, onChange, placeholder='', label, required=false, settings={}, language=lang.EN, ...props }) => {
     const input = useField(name, placeholder, label);
     const [status, setStatus] = useState({
         status: '',
@@ -60,7 +60,7 @@ const Field = ({ type, name, onChange, placeholder='', label, required=false, se
     }
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
+        <div style={{ width: '100%', height: '100%' }} {...props}>
             <FieldComponent hook={input} status={updateStatus} settings={settings} required={required} />
         </div>
     );

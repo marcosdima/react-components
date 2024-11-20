@@ -105,6 +105,10 @@ function App() {
       fields={fields}
       // eslint-disable-next-line no-console
       onSubmit={(data) => console.log(data)}
+      observeThis={{
+        // eslint-disable-next-line no-console
+        estado: (values) => console.log(values),
+      }}
       style={{width: '100%', heigth: '100%'}}
       language="ES"
     />
