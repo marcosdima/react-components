@@ -54,11 +54,16 @@ const Field = ({ type, name, onChange, placeholder='', label, required=false, se
         }
     }, [FieldComponent, language]);
 
+    // Checks that a component was found.
     if (!FieldComponent) {
         return <p>Error: component {type} does not exists</p>;
     }
 
-    return <div style={{ width: '100%', height: '100%' }}><FieldComponent hook={input} status={updateStatus} settings={settings} required={required} /></div>;
+    return (
+        <div style={{ width: '100%', height: '100%' }}>
+            <FieldComponent hook={input} status={updateStatus} settings={settings} required={required} />
+        </div>
+    );
 };
 
 Field.propTypes = FieldProps;

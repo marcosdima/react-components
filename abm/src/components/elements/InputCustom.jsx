@@ -31,7 +31,7 @@ const handleKeyDown = (event, condition) => {
 const InputCustom = ({ label, condition=inputType.ANY, ...props }) => {
     return (
         <Container>
-            <LabelCustom {...label}/>
+            <LabelCustom text={label} />
             <StyledInput onKeyDown={(event) => handleKeyDown(event, condition)}  {...props} />
         </Container>
     );

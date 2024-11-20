@@ -68,7 +68,6 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
         setLoading(false);
     };
 
-    const label = { text: hook.name, capitalFirst: true };
     const onChangeDir = (event) => setDir(event.target.value); 
     const updateCoordinates = ([{ lat, lon }]) => {
         setPlaces([{ lat, lon }]);
@@ -80,7 +79,7 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
             <TopSection>
                 {/* Priority equal to 2 means more space for the component */}
                 <Item $priority={2}>
-                    <InputCustom label={label} onChange={onChangeDir} value={dir}/>
+                    <InputCustom label={hook.label} onChange={onChangeDir} value={dir}/>
                 </Item>
                 <Item>
                     <ButtonCustom onClick={search}>

@@ -1,18 +1,10 @@
 import StyledLabel from "../../styles/Label.styles";
 import { LabelCustomProps } from "../PropTypes";
 
-const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-};
-
-const LabelCustom = ({ capitalFirst, text, ...props }) => {
-    const label = capitalFirst 
-        ? capitalizeFirstLetter(text)
-        : text;
-
+const LabelCustom = ({ text, ...props }) => {
     return (
         <StyledLabel {...props}>
-            {label}
+            {text}
         </StyledLabel>
     );
 };

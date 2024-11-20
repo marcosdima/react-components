@@ -52,7 +52,7 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
 
     return (
         <Container>
-            <LabelCustom {...label}/>
+            <LabelCustom text={label}/>
             <Select
                 options={options}
                 onChange={onChange}

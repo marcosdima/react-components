@@ -6,7 +6,7 @@ import LabelCustom from "./LabelCustom";
 const TextAreaCustom = ({ label, ...props }) => {
     return (
         <Container>
-            <LabelCustom {...label}/>
+            <LabelCustom text={label}/>
             <StyledTextArea {...props} />
         </Container>
     );

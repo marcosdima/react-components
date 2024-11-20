@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-const useField = (name, placeholder, label={ capitalFirst: true }) => {
-  const [value, setValue] = useState('');
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-  label.text = name;
+const useField = (name, placeholder, label) => {
+  const [value, setValue] = useState('');
 
   const onChange = (event) => {
     const value = event?.target?.value ?? event; // If event has no 'target' attribute, then means that the value was provided directly.
@@ -15,7 +17,7 @@ const useField = (name, placeholder, label={ capitalFirst: true }) => {
     value,
     onChange,
     placeholder,
-    label,
+    label: label ?? capitalizeFirstLetter(name),
   };
 };
 

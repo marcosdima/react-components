@@ -9,6 +9,7 @@ import inputType from '../utils/enums/inputType';
 export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
     name: PropTypes.string.isRequired,
+    label: PropTypes.string,
     onChange: PropTypes.func,
     required: PropTypes.bool,
     language: PropTypes.oneOf(Object.values(lang)),
@@ -99,7 +100,6 @@ export const SearchLocationFieldProps = {
 
 // ---- // Elements // ---- //
 export const LabelCustomProps = {
-    capitalFirst: PropTypes.bool,
     text: PropTypes.string.isRequired,
 };
 
@@ -109,7 +109,7 @@ export const InputCustomProps = {
     value: PropTypes.any,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-    label: PropTypes.shape(LabelCustomProps),
+    label: PropTypes.string,
 };
 
 export const ButtonCustomProps = {
