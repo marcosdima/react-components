@@ -37,6 +37,11 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
             setRender(true);
         }
 
+        // Reset hook value.
+        if (hook.value !== '') {
+            hook.onChange('');
+        }
+        
         // Set loading as true, to show the loading icon.
         setLoading(true);
 
@@ -57,6 +62,11 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
                 ),
             );
 
+            // If there is just one pair of coords, then set hook.value.
+            if (floatCoordinates.length === 1) {
+                updateCoordinates(floatCoordinates);
+            }
+
             // Set the hook.
             setPlaces(floatCoordinates);
         } catch(err) {
@@ -69,9 +79,11 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
     };
 
     const onChangeDir = (event) => setDir(event.target.value); 
+
     const updateCoordinates = ([{ lat, lon }]) => {
         setPlaces([{ lat, lon }]);
-        hook.onChange(`${lat},${lon}`);
+        // TODO: Maybe this can be better...
+        hook.onChange(`${lat},${lon},${dir}`);
     };
 
     return (
