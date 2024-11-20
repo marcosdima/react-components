@@ -18,10 +18,8 @@ const handleKeyDown = (event, condition) => {
         }
     } else if (condition === inputType.LETTERS) {
         if (
-            event.key !== 'Backspace' &&
             event.key !== 'Delete' &&
-            (event.key < 'a' || event.key > 'z') &&
-            (event.key < 'A' || event.key > 'Z')
+            !/^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]$/.test(event.key)
         ) {
             event.preventDefault();
         }

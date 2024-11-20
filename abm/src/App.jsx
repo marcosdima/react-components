@@ -18,7 +18,8 @@ function App() {
       name: 'firstname',
       required:true,
       settings: {
-          maxLength: 4,
+        maxLength: 4,
+        onlyLetters: true,
       },
       row: 0,
       col: 1,
