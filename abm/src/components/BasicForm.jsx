@@ -59,7 +59,7 @@ const StatusDisplay = ({ status }) => {
     );
 };
 
-const BasicForm = ({ style, fields, onSubmit, observeThis={}, language=lang.ES, ...props }) => {
+const BasicForm = ({ style, fields, onSubmit, observeThis, language=lang.ES, ...props }) => {
     const [fieldsValues, setFieldsValues] = useState({});
     const [status, setStatus] = useState({});
 
@@ -89,7 +89,7 @@ const BasicForm = ({ style, fields, onSubmit, observeThis={}, language=lang.ES, 
             ...prevStatus,
             [name]: statusUpdate,
         }));
-        if (name in observeThis) {
+        if (observeThis && name in observeThis) {
             observeThis[name](value);
         }
     }, [observeThis]);
