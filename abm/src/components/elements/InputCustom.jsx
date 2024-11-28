@@ -9,18 +9,17 @@ const handleKeyDown = (event, condition) => {
     }
 
     if (condition === inputType.NUMBERS) {
-        if (
-            event.key !== 'Backspace' &&
-            event.key !== 'Delete' &&
-            (event.key < '0' || event.key > '9')
-        ) {
+        const isNumberKey = event.key >= '0' && event.key <= '9';
+        const isControlKey = ['Backspace', 'Delete'].includes(event.key);
+    
+        if (!isNumberKey && !isControlKey) {
             event.preventDefault();
         }
     } else if (condition === inputType.LETTERS) {
-        if (
-            event.key !== 'Delete' &&
-            !/^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]$/.test(event.key)
-        ) {
+        const isNavigationKey = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Backspace'].includes(event.key);
+        const isLetterKey = /^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]$/.test(event.key);
+
+        if (!isNavigationKey && !isLetterKey) {
             event.preventDefault();
         }
     }
