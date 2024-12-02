@@ -6,8 +6,8 @@ import statusType from '../utils/enums/statusType';
 import lang from '../utils/enums/lang';
 import { translateFieldStatus, translateGenericStatus } from '../utils/functions/translate';
 
-const Field = ({ type, name, onChange, placeholder='', label, required=false, settings={}, language=lang.EN, ...props }) => {
-    const input = useField(name, placeholder, label);
+const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', required=false, settings={}, language=lang.EN, ...props }) => {
+    const input = useField(name, placeholder, label, defaultValue);
     const [status, setStatus] = useState({
         status: '',
         statusMessage: '',

@@ -21,8 +21,7 @@ const SearchLocationField = ({ hook, status, required, settings: { appendAtStart
 
         if (length === 0 && required) {
             status(statusType.ERROR, 'required', { name: hook.label });
-        }
-        else if (places.length > 1) {
+        } else if (places.length > 1) {
             status(statusType.ERROR, 'multiplePlaces', { name: hook.label, dir });
         } else if (hook.value === '') {
             status(required ? statusType.ERROR : statusType.WARNING, 'noSelected', { name: hook.label });

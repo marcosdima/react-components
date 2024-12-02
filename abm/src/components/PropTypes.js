@@ -10,6 +10,7 @@ export const FieldProps =  {
     type: PropTypes.oneOf(Object.values(fieldType)).isRequired,
     name: PropTypes.string.isRequired,
     label: PropTypes.string,
+    defaultValue: PropTypes.string,
     onChange: PropTypes.func,
     required: PropTypes.bool,
     language: PropTypes.oneOf(Object.values(lang)),

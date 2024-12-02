@@ -8,6 +8,7 @@ function App() {
       type: fieldType.CHAR,
       name: 'username',
       label: 'UserName',
+      defaultValue: '123123123',
       required:true,
       placeholder: 'Ingrese un username...',
       row: 0,
