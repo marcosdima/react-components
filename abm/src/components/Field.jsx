@@ -12,20 +12,15 @@ const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', r
         status: '',
         statusMessage: '',
     });
-    const [changeFlag, setChangeFlag] = useState(false);
+    const [currDefaultValue, updateCurrDefaultValue] = useState(defaultValue);
 
     // Checks if a change was made. If it isn't happend, then sets the new defaultValue.
     useEffect(() => {
-        if (!changeFlag) {
+        if (currDefaultValue !== defaultValue) {
             input.onChange(defaultValue);
+            updateCurrDefaultValue(defaultValue);
         }
-    }, [changeFlag, defaultValue, input]);
-
-    useEffect(() => {
-        if (changeFlag && input.value === defaultValue) {
-            setChangeFlag(false);
-        }
-    }, [changeFlag, defaultValue, input.value]);
+    }, [defaultValue, input, currDefaultValue]);
 
     // Every time field is modified, sends the data to form using the onChange function.
     useEffect(() => {
@@ -66,11 +61,7 @@ const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', r
                 statusMessage: translateFieldStatus(FieldComponent.displayName, fieldStatusMessage, variables, language),
             });
         }
-
-        if (input.value !== defaultValue) {
-            setChangeFlag(true);
-        }
-    }, [FieldComponent, defaultValue, input.value, language]);
+    }, [FieldComponent, language]);
 
     // Checks that a component was found.
     if (!FieldComponent) {
