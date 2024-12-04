@@ -25,7 +25,8 @@ const handleKeyDown = (event, condition) => {
     }
 };
 
-const InputCustom = ({ label, condition=inputType.ANY, ...props }) => {
+// eslint-disable-next-line no-unused-vars
+const InputCustom = ({ label, condition=inputType.ANY, defaultValue, ...props }) => {
     return (
         <Container>
             <LabelCustom text={label} />

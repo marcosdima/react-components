@@ -18,6 +18,7 @@ const useField = (name, placeholder, label, defaultValue='') => {
     onChange,
     placeholder,
     label: label ?? capitalizeFirstLetter(name),
+    defaultValue,
   };
 };
 

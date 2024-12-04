@@ -12,6 +12,14 @@ const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', r
         status: '',
         statusMessage: '',
     });
+    const [changeFlag, setChangeFlag] = useState(false);
+
+    // Checks if a change was made. If it isn't happend, then sets the new defaultValue.
+    useEffect(() => {
+        if (!changeFlag) {
+            input.onChange(defaultValue);
+        }
+    }, [changeFlag, defaultValue, input]);
 
     // Every time field is modified, sends the data to form using the onChange function.
     useEffect(() => {
@@ -52,7 +60,11 @@ const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', r
                 statusMessage: translateFieldStatus(FieldComponent.displayName, fieldStatusMessage, variables, language),
             });
         }
-    }, [FieldComponent, language]);
+
+        if (input.value !== defaultValue) {
+            setChangeFlag(true);
+        }
+    }, [FieldComponent, defaultValue, input.value, language]);
 
     // Checks that a component was found.
     if (!FieldComponent) {
