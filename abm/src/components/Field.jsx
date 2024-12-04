@@ -21,6 +21,12 @@ const Field = ({ type, name, onChange, label, placeholder='', defaultValue='', r
         }
     }, [changeFlag, defaultValue, input]);
 
+    useEffect(() => {
+        if (changeFlag && input.value === defaultValue) {
+            setChangeFlag(false);
+        }
+    }, [changeFlag, defaultValue, input.value]);
+
     // Every time field is modified, sends the data to form using the onChange function.
     useEffect(() => {
         onChange(name, input.value, status);
