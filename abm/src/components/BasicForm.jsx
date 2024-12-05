@@ -59,7 +59,7 @@ const StatusDisplay = ({ status }) => {
     );
 };
 
-const BasicForm = ({ style, fields, onSubmit, observeThis, language=lang.ES, ...props }) => {
+const BasicForm = ({ style, fields, onSubmit, observeThis, buttonLabel, language=lang.ES, ...props }) => {
     const [fieldsValues, setFieldsValues] = useState({});
     const [status, setStatus] = useState({});
 
@@ -139,7 +139,7 @@ const BasicForm = ({ style, fields, onSubmit, observeThis, language=lang.ES, ...
         gap: '0.5rem',
     };
 
-    const submit = translateGenericStatus('submit', {}, language);
+    const submit = buttonLabel ?? translateGenericStatus('submit', {}, language);
 
     return (
         <div style={style} {...props} >

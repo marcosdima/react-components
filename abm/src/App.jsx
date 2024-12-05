@@ -110,6 +110,7 @@ function App() {
         // eslint-disable-next-line no-console
         estado: (values) => console.log(values),
       }}
+      buttonLabel={'Insert Button Label'}
       style={{width: '100%', heigth: '100%'}}
       language="ES"
     />
