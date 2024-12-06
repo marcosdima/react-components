@@ -64,8 +64,8 @@ export const EmailFieldProps = {
 export const NumberFieldProps = {
     ...BasicShape,
     settings: PropTypes.shape({
-        min: PropTypes.number,
-        max: PropTypes.number,
+        minValue: PropTypes.number,
+        maxValue: PropTypes.number,
     }),
 };
 

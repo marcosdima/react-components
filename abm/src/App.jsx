@@ -42,8 +42,8 @@ function App() {
       required:true,
       placeholder: '18...110',
       settings: {
-        min: 18,
-        max: 110,
+        minValue: 18,
+        maxValue: 110,
       },
       row: 0,
       col: 3,
