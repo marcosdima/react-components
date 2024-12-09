@@ -87,7 +87,7 @@ export const SelectorFieldProps = {
                 value: PropTypes.any,
             }),
         ),
-        setValue: PropTypes.string,
+        setValue: PropTypes.any,
     }),
 };
 
@@ -128,7 +128,7 @@ export const SelectCustomProps = {
             value: PropTypes.any,
         }),
     ),
-    setValue: PropTypes.string,
+    setValue: PropTypes.any,
     onChange: PropTypes.func,
 };
 
