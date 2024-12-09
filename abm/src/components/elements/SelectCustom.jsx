@@ -51,7 +51,7 @@ const SelectCustom = ({ options, onChange, setValue, label, placeholder="Select 
     };
 
     const defaultValue = options.find(({ value }) => value === setValue);
-    if (!defaultValue) {
+    if (setValue && !defaultValue) {
         // eslint-disable-next-line no-console
         console.error(`SelectCustomError: Missing value ${setValue} in options!`);
     }
