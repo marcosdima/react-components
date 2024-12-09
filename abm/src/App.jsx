@@ -72,7 +72,8 @@ function App() {
       name: 'estado',
       required: true,
       settings: {
-          values: [{label: 'casa', value: 1}, {label: 'roto', value: 2}],
+          values: [{label: 'casa', value: '1'}, {label: 'roto', value: '2'}],
+          setValue: '3',
       },
       row: 1,
       col: 2,

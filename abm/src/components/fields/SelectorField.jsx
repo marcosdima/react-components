@@ -17,7 +17,7 @@ const SelectorField = ({ hook, status, required, settings: { values, setValue } 
     // Set 'setValue'
     useEffect(() => {
         if (setValue && !firstRender) {
-            hook.onChange(setValue.value);
+            hook.onChange(setValue);
             setFirstRender(true);
         };
     }, [firstRender, hook, hook.onChange, setValue]);

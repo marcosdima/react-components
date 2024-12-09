@@ -50,6 +50,12 @@ const SelectCustom = ({ options, onChange, setValue, label, placeholder="Select 
         }),
     };
 
+    const defaultValue = options.find(({ value }) => value === setValue);
+    if (!defaultValue) {
+        // eslint-disable-next-line no-console
+        console.error(`SelectCustomError: Missing value ${setValue} in options!`);
+    }
+
     return (
         <Container>
             <LabelCustom text={label}/>
@@ -58,7 +64,7 @@ const SelectCustom = ({ options, onChange, setValue, label, placeholder="Select 
                 onChange={onChange}
                 styles={customStyles}
                 placeholder={placeholder}
-                defaultValue={setValue}
+                defaultValue={defaultValue}
             />
         </Container>
     );
