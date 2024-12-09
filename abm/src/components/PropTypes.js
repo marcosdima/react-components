@@ -87,6 +87,10 @@ export const SelectorFieldProps = {
                 value: PropTypes.any,
             }),
         ),
+        setValue: PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            value: PropTypes.any,
+        }),
     }),
 };
 
@@ -127,6 +131,10 @@ export const SelectCustomProps = {
             value: PropTypes.any,
         }),
     ),
+    setValue: PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.any,
+    }),
     onChange: PropTypes.func,
 };
 

@@ -71,7 +71,6 @@ function App() {
       type: fieldType.SELECTOR,
       name: 'estado',
       required: true,
-      defaultValue: null,
       settings: {
           values: [{label: 'casa', value: 1}, {label: 'roto', value: 2}],
       },

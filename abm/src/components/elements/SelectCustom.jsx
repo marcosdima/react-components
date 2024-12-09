@@ -3,7 +3,7 @@ import { SelectCustomProps } from '../PropTypes';
 import { Container } from '../../styles/Input.styles';
 import LabelCustom from './LabelCustom';
 
-const SelectCustom = ({ options, onChange, placeholder="Select an option...", label }) => {
+const SelectCustom = ({ options, onChange, setValue, label, placeholder="Select an option..." }) => {
     const customStyles = {
         container: (provided) => ({
             ...provided,
@@ -58,6 +58,7 @@ const SelectCustom = ({ options, onChange, placeholder="Select an option...", la
                 onChange={onChange}
                 styles={customStyles}
                 placeholder={placeholder}
+                defaultValue={setValue}
             />
         </Container>
     );
